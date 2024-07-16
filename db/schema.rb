@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_16_194830) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_16_200324) do
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "cpf"
     t.string "password_digest"
-    t.string "recovery_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.integer "balance", default: 0, null: false
+    t.string "recovery_password_digest"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -28,29 +28,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_194830) do
     t.string "name"
     t.string "cnpj"
     t.string "password_digest"
-    t.string "recovery_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "balance"
+    t.integer "balance", default: 0, null: false
+    t.string "recovery_password_digest"
   end
 
-  create_table "user_customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "cpf"
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_customers_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest"
-    t.string "recovery_password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "user_customers", "users"
 end

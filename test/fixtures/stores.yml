@@ -5,11 +5,9 @@ one:
   name: MyString
   cnpj: MyString
   password_digest: MyString
-  recovery_password: MyString
 
 two:
   email: MyString
   name: MyString
   cnpj: MyString
   password_digest: MyString
-  recovery_password: MyString

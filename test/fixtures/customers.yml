@@ -5,11 +5,9 @@ one:
   last_name: MyString
   cpf: MyString
   password_digest: MyString
-  recovery_password: MyString
 
 two:
   first_name: MyString
   last_name: MyString
   cpf: MyString
   password_digest: MyString
-  recovery_password: MyString
