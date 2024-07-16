@@ -16,7 +16,9 @@ class Customer < ApplicationRecord
   def clean_cpf
     return unless cpf
 
-    self.cpf = cpf.gsub('-', '').gsub('.', '').strip
+    ['-', '.'].each do |char|
+      self.cpf = cnpj.gsub(char, '')
+    end
   end
 
   def stop
