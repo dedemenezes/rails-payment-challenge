@@ -17,7 +17,7 @@ class Customer < ApplicationRecord
     return unless cpf
 
     ['-', '.'].each do |char|
-      self.cpf = cnpj.gsub(char, '')
+      self.cpf = cpf.gsub(char, '')
     end
   end
 
