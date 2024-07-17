@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: one@customer.com
+  first_name: MyString
+  last_name: MyString
+  cpf: 111.222.333-44
+  password_digest: password
+
+two:
+  first_name: MyString
+  last_name: MyString
+  cpf: MyString
+  password_digest: MyString
