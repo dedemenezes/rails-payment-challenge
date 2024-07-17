@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  include DocumentCleaning
+
   has_secure_password
   has_secure_password :recovery_password, validations: false
 
@@ -8,18 +10,7 @@ class Customer < ApplicationRecord
   validates :balance, numericality: { only_integer: true }
   validates :password, length: { minimum: 6 }
 
-  before_validation :clean_cpf
   # before_validation :stop
-
-  private
-
-  def clean_cpf
-    return unless cpf
-
-    ['-', '.'].each do |char|
-      self.cpf = cpf.gsub(char, '')
-    end
-  end
 
   def stop
     binding.b
